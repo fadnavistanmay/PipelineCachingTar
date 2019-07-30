@@ -11,10 +11,10 @@ namespace TarApp
         public static int Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            var sourceDirectory = args[0];
+            var sourceFile = args[0];
             var destinationDirectory = args[1];
 
-            if(!File.Exists(sourceDirectory))
+            if(!File.Exists(sourceFile))
             {
                 Console.WriteLine("Invalid Path!!");
                 return 1;
@@ -27,7 +27,7 @@ namespace TarApp
                 tarring.StartInfo.RedirectStandardInput = true;
                 tarring.StartInfo.UseShellExecute = false;
                 tarring.Start();
-                DownloadToFile(sourceDirectory, tarring.StandardInput);
+                DownloadToFile(sourceFile, tarring.StandardInput);
             }
             return 0;
         }

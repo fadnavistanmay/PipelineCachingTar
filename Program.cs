@@ -23,7 +23,7 @@ namespace TarApp
             using(Process tarring = new Process())
             {
                 tarring.StartInfo.FileName = "tar";
-                tarring.StartInfo.Arguments = $"-xf {destinationDirectory}";
+                tarring.StartInfo.Arguments = $"-xf - -C {destinationDirectory}";
                 tarring.StartInfo.RedirectStandardInput = true;
                 tarring.StartInfo.UseShellExecute = false;
                 tarring.Start();
@@ -36,11 +36,11 @@ namespace TarApp
         {
             using(FileStream fs = File.Open(sourceDirectory, FileMode.Open, FileAccess.Read))
             {
-                byte[] bytes = new byte[1024];
-                UTF8Encoding encoding = new UTF8Encoding(true);
-                while(fs.Read(bytes, 0, bytes.Length) > 0)
+                byte[] bytes = new byte[1024 * 1000];
+                int len;
+                while( (len = fs.Read(bytes, 0, bytes.Length)) > 0)
                 {
-                    stream.Write(encoding.GetString(bytes));
+                    stream.Write(stream.Encoding.GetChars(bytes,0,len));
                 }
             }
         }

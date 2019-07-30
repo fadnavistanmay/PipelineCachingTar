@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "TarApp": {
+      "commandName": "Project",
+      "commandLineArgs": "C:\\Users\\tafadnav\\tarsource\\dummy.tar C:\\Users\\tafadnav\\tardest"
+    }
+  }
+}

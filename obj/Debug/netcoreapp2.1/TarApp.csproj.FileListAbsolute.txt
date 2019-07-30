@@ -1,0 +1,11 @@
+C:\Users\tafadnav\Desktop\TarApp\bin\Debug\netcoreapp2.1\TarApp.deps.json
+C:\Users\tafadnav\Desktop\TarApp\bin\Debug\netcoreapp2.1\TarApp.runtimeconfig.json
+C:\Users\tafadnav\Desktop\TarApp\bin\Debug\netcoreapp2.1\TarApp.runtimeconfig.dev.json
+C:\Users\tafadnav\Desktop\TarApp\bin\Debug\netcoreapp2.1\TarApp.dll
+C:\Users\tafadnav\Desktop\TarApp\bin\Debug\netcoreapp2.1\TarApp.pdb
+C:\Users\tafadnav\Desktop\TarApp\obj\Debug\netcoreapp2.1\TarApp.csprojAssemblyReference.cache
+C:\Users\tafadnav\Desktop\TarApp\obj\Debug\netcoreapp2.1\TarApp.csproj.CoreCompileInputs.cache
+C:\Users\tafadnav\Desktop\TarApp\obj\Debug\netcoreapp2.1\TarApp.AssemblyInfoInputs.cache
+C:\Users\tafadnav\Desktop\TarApp\obj\Debug\netcoreapp2.1\TarApp.AssemblyInfo.cs
+C:\Users\tafadnav\Desktop\TarApp\obj\Debug\netcoreapp2.1\TarApp.dll
+C:\Users\tafadnav\Desktop\TarApp\obj\Debug\netcoreapp2.1\TarApp.pdb

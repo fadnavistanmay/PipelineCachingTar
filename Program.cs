@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Diagnostics;
-
+using System.Text;
 
 namespace TarApp
 {
@@ -23,7 +23,7 @@ namespace TarApp
             using(Process tarring = new Process())
             {
                 tarring.StartInfo.FileName = "tar";
-                tarring.StartInfo.Arguments = $"-xf -C {destinationDirectory}";
+                tarring.StartInfo.Arguments = $"-xf {destinationDirectory}";
                 tarring.StartInfo.RedirectStandardInput = true;
                 tarring.StartInfo.UseShellExecute = false;
                 tarring.Start();
@@ -36,25 +36,12 @@ namespace TarApp
         {
             using(FileStream fs = File.Open(sourceDirectory, FileMode.Open, FileAccess.Read))
             {
-                byte[] bytes = new byte[fs.Length];
-                int numBytesToRead = (int)fs.Length;
-                int numBytesRead = 0;
-                while(numBytesToRead > 0)
+                byte[] bytes = new byte[1024];
+                UTF8Encoding encoding = new UTF8Encoding(true);
+                while(fs.Read(bytes, 0, bytes.Length) > 0)
                 {
-                    int n = fs.Read(bytes, numBytesRead, numBytesToRead);
-
-                    if(n == 0)
-                    {
-                        break;
-                    }
-
-                    numBytesRead +=n;
-                    numBytesToRead -=n;
+                    stream.Write(encoding.GetString(bytes));
                 }
-
-                numBytesToRead = bytes.Length;
-                
-                stream.WriteAsync(System.Text.Encoding.UTF8.GetString(bytes).ToCharArray(), 0, numBytesToRead);
             }
         }
     }
